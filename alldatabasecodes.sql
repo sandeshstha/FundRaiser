@@ -27,6 +27,7 @@ CREATE TABLE campaigns (
     campaign_days bigint not null,
     campaign_amount bigint not null,
     `campaign_description` varchar(255) not null,
-    camapignPhone bigint not null,
+    campaignPhone bigint not null,
+    campaignImage varchar(255),
     campaign_reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );

@@ -52,7 +52,7 @@
 
         <div class="boxtwo">
         <br>
-            <form action="includes/createCampaign.inc.php" method="POST">
+            <form action="includes/createCampaign.inc.php" method="POST" enctype="multipart/form-data">
                 <input type="text" name="campaignName" placeholder="Campaign name" required><br><br>
                 <select name="campaignType" required>
                     <option disabled selected>Type of Campaign</option>
@@ -65,7 +65,8 @@
                 <textarea rows="5" cols="50" name="campaignDescription" placeholder="Description of your campaign" required></textarea><br><br>
                 <input type="tel" name="phone" placeholder="Phone: 98********" pattern="[0-9]{10}" required><br><br>
                 <!-- to-do upload file -upload image only-->
-                <input type="file" name="campaignPhoto"><br><br>
+                <span id="campaignImage">Upload image of campaign</span> <br>
+                <input type="file" name="campaignPhoto" accept="image/*"><br><br>
                 <input type="checkbox" required><span id="agreeterms"> Agree all terms and conditions</span><br>
                 <input type="submit" name="submit" value="Create Campaign">
             </form>

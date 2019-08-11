@@ -131,6 +131,11 @@ body {
     outline: none;
 }
 
+#campaignImage {
+    font-family: HelveticaNeueMedium;
+    font-size: 12px;
+}
+
 .boxtwo select {
     color: #707070;
 }
