@@ -41,7 +41,7 @@ if(isset($_POST['submit'])) {
                  
                 $verified = $row['verified'];
                 if($verified == 1) {
-                    header("Location: ../createCampaign.php?login=success");
+                    header("Location: ../organizerHome.php");
                     exit();
                 } else {
                     // echo "This account has not been yet verified. An email was sent to ".$_SESSION['o_email']." on ".$_SESSION['o_date'] ;

@@ -1,0 +1,141 @@
+@font-face 
+{
+    font-family: HelveticaNeueMedium ;
+    src : url(../fonts/HelveticaNeueMedium.otf);
+}
+
+@font-face 
+{
+    font-family: HelveticaNeueThin ;
+    src : url(../fonts/HelveticaNeueThin.otf);
+}
+
+@font-face 
+{
+    font-family: HelveticaNeueRegular ;
+    src : url(../fonts/HelveticaNeueRegular.ttf);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar {
+    height: 70px;
+    width: 100%;
+    box-shadow: 0 1px 3px #aaaaaa;  
+}
+
+.nav-bar img{
+    height: 50px;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.nav-links {
+    margin-top: -38px;
+    margin-left: 80px;
+    word-spacing: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #707070;
+    font-family: HelveticaNeueMedium;
+}
+
+.nav-links a:hover {
+    color: #591484;
+}
+
+/* login button styling */
+.btn-login-signup {
+    position: absolute;
+    top: 10px;
+    left: 88%;
+    word-spacing: 15px;
+}
+
+/* code reuse for both button */
+.btn-login-signup button {
+    height: 50px;
+    width: 120px;
+    font-family: HelveticaNeueMedium;
+    outline: none;
+}
+
+
+#btn-login {
+    border: none;
+    border-radius: 25px;
+    background-color: #591484;
+    color: white;
+}
+
+#btn-login:hover {
+    cursor: pointer;
+}
+
+/* body part */
+
+.buttonContainer {
+    /* border: 1px solid red; */
+    width: 70%;
+    height: 400px;
+    margin-left: 15%;
+    text-align: center;
+    word-spacing: 150px;
+}
+
+.organizerButtons {
+    border: none;
+    outline: none;
+    background-color: #591484;
+    color: white;
+    height: 100px;
+    width: 350px;
+    border-radius: 25px;
+    font-family: HelveticaNeueMedium;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 150px;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.38);
+}
+
+.organizerButtons:hover {
+    cursor: pointer;
+    font-size: 30px;
+}
+
+
+
+
+/* Footer section */
+
+.footer {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 2%;
+    width: 100%;
+    font-family: HelveticaNeuethin;
+    color: #707070;
+    font-size: 14px;
+    word-spacing: 2px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+#footer-trademark {
+    font-size: 16px;
+    color: #707070;
+}
