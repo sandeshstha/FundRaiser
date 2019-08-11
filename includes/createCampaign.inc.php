@@ -12,7 +12,7 @@ if(!isset($_POST['submit'])) { //if one try to access createcampaign.inc.php wit
     $campaignDays = $_POST['campaignDays'];
     $campaignAmount = $_POST['campaignAmount'];
     $campaignDescription = $_POST['campaignDescription'];
-    $camapignPhone = $_POST['phone'];
+    $campaignPhone = $_POST['phone'];
 
     // error handling
     if(!preg_match("/^[a-zA-Z'. -]+$/", $campaignName)) {    
@@ -27,13 +27,24 @@ if(!isset($_POST['submit'])) { //if one try to access createcampaign.inc.php wit
             header("Location: ../createCampaign.php?campaign=camapignNameTaken");
             exit();
         } else {
+
+            // for campaign photo part
+
+            $filename = $_FILES['campaignPhoto']['name'];
+            $tempname = $_FILES['campaignPhoto']['tmp_name'];
+            $filename = md5($filename.time());
+            $campaignImagePath = "../assets/images/campaignImages/".$filename;
+            
+            move_uploaded_file($tempname,$campaignImagePath);
+
              // insert the input value into database
-             $sql = "INSERT INTO campaigns(campaign_name, campaign_type, campaign_days, campaign_amount, campaign_description,camapignPhone) VALUES('$campaignName','$campaignType',$campaignDays,$campaignAmount,'$campaignDescription',$camapignPhone);";
+             $sql = "INSERT INTO campaigns(campaign_name, campaign_type, campaign_days, campaign_amount, campaign_description,campaignPhone,campaignImage) VALUES('$campaignName','$campaignType',$campaignDays,$campaignAmount,'$campaignDescription',$campaignPhone,'$campaignImagePath');";
              $insertSuccess = mysqli_query($conn, $sql);
 // to-do
              // if campaign input data successfully inserted in database then redirect him to success page with link of organizer profile
              if($insertSuccess) {
                 echo "<h1>inserted into database</h1>";
+                header("Location: ../assets/html/organizerCampaignSuccess.html");
              } else {
                  echo $conn->error;
              }
