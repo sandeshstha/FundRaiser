@@ -1,8 +1,13 @@
 <?php
-    session_start();
-    // if(!isset($_SESSION['o_id'] )) { 
-    //     header("Location: index.php");
-    // }
+    include 'includes/sessions.inc.php';
+    // echo $data['organizer_id'];
+    // echo $data['organizer_fullname'];
+    // echo $data['organizer_username'];
+    // echo $data['organizer_email'];
+    // echo $data['organizer_password'];
+    // echo $data['organizer_phone'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +38,7 @@
             } else { //if organizers are logged in
                 echo '<form action="includes/logout.inc.php" method="POST">
                         <div class="btn-login-signup">
-                            <button type="submit" id="btn-login">LOGOUT</button>
+                            <button type="submit" id="btn-login" name="submit">LOGOUT</button>
                         </div>
                       </form>';
             }

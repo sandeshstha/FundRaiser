@@ -7,5 +7,5 @@ if(isset($_POST['submit'])) {
     header("Location: ../index.php");
     exit();
 } else {
-    header("Location: ../index.php");
+    echo "aauda bhayo ";
 }
