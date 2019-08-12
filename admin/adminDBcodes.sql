@@ -1,4 +1,4 @@
--- the name of the database for admin is fundraiseradmin
+-- the name of the database for admin is fundraiser
 
 CREATE TABLE adminlogin (
     admin_id int(11) AUTO_INCREMENT PRIMARY KEY not null,

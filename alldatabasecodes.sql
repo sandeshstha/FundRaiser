@@ -29,5 +29,16 @@ CREATE TABLE campaigns (
     `campaign_description` varchar(255) not null,
     campaignPhone bigint not null,
     campaignImage varchar(255),
+    campaignApproval tinyint(1) DEFAULT 0,
     campaign_reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE donors (
+    donor_id int(11) AUTO_INCREMENT PRIMARY KEY not null,
+    `donor_name` varchar(255) not null,
+    donated_amount bigint not null,
+    `donor_address` varchar(255) not null,
+    `proof_image` varchar(255) not null,
+    donor_approval tinyint(1) DEFAULT 0,
+    donor_last_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
