@@ -30,6 +30,7 @@ CREATE TABLE campaigns (
     campaignPhone bigint not null,
     campaignImage varchar(255),
     campaignApproval tinyint(1) DEFAULT 0,
+    campaignCreator varchar(255) not null,
     campaign_reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 

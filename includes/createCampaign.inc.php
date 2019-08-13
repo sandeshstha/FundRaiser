@@ -1,5 +1,8 @@
 <?php
 
+include_once 'sessions.inc.php';
+$campaigncreator = $data['organizer_username'];
+
 if(!isset($_POST['submit'])) { //if one try to access createcampaign.inc.php without access
     header("Location: ../createCampaign.php");
     exit();
@@ -38,7 +41,7 @@ if(!isset($_POST['submit'])) { //if one try to access createcampaign.inc.php wit
             move_uploaded_file($tempname,$campaignImagePath);
 
              // insert the input value into database
-             $sql = "INSERT INTO campaigns(campaign_name, campaign_type, campaign_days, campaign_amount, campaign_description,campaignPhone,campaignImage) VALUES('$campaignName','$campaignType',$campaignDays,$campaignAmount,'$campaignDescription',$campaignPhone,'$campaignImagePath');";
+             $sql = "INSERT INTO campaigns(campaign_name, campaign_type, campaign_days, campaign_amount, campaign_description,campaignPhone,campaignImage,`campaignCreator`) VALUES('$campaignName','$campaignType',$campaignDays,$campaignAmount,'$campaignDescription',$campaignPhone,'$campaignImagePath','$campaigncreator');";
              $insertSuccess = mysqli_query($conn, $sql);
 // to-do
              // if campaign input data successfully inserted in database then redirect him to success page with link of organizer profile
