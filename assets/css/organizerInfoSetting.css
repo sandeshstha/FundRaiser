@@ -81,87 +81,44 @@ body {
 /* body part */
 
 .main-container {
-    text-align: center; 
     font-family: HelveticaNeueMedium;
-    font-size: 19px;
-    color: #707070;
-    width: 100%;
-}
-
-.about{
-    text-align: center; 
-    align-content: center;
-    width: 40%;
-    margin-left: 30%;
-    height: 300px;
-    border: 1px solid red;
-}
-
-.about table {
     text-align: center;
-    align-content: center;
-    width: 70%;
-    margin-left: 73px;
-    border-collapse: collapse;
+    width: 60%;
+    height: 400px;
+    margin-left: 20%;
+    color: #707070;
     /* border: 1px solid red; */
-
 }
-
-.about td,tr {
-    padding: 5px;
-}
-
-.about td {
-    border-top: 1px solid black;
-}
-
-.about td:nth-child(1) {
-    text-align: right;   
-}
-
-.about td:nth-child(3) {
-    font-family: HelveticaNeueThin;
-    text-align: left;   
-}
-
-.about button {
-    width: 100px;
+.successMessage {
     height: 40px;
-    border-radius: 25px;
-    outline: none;
-    border: none;
+    width: 100%;
+    background-color: rgb(16, 78, 16);
+    color: white;
+    font-size: 18px;
+    font-family: HelveticaNeueMedium;
+    text-align: left;
+    padding-left:20px;
+    padding-top:10px;
+}
+
+#close-btn {
+    float: right;
+    padding-right:20px;
+    padding-top:5px;
+
+
+}
+
+/* if user change sth, button will be like this */
+.active { 
+    cursor: pointer;
     background-color: #591484;
     color: white;
-    font-family: HelveticaNeueThin;
-    font-size:18px;
 }
 
-.about button:hover {
-    cursor: pointer;
-    font-size: 16px;
-}
-
-
-
-.created-campaigns {
-    text-align: center; 
-    align-content: center;
-    width: 40%;
-    margin-left: 30%;
-    height: 300px;
-    border: 1px solid red;
-}
-
-.created-campaigns table {
-    border: none;
-    text-align: center;
-    align-content: center;
-    width: 70%;
-    margin-left: 73px;
-    border-collapse: collapse;
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.38);
-    border-radius: 25px;
-    
+/* initial button css with no changes by organizer */
+.submit-btn {
+    cursor: not-allowed;
 }
 
 

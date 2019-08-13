@@ -80,7 +80,7 @@
                     </tr>
                     <tr>
                         <td colspan="3" style="text-align: center;">
-                            <button> <i class="fas fa-cog"></i>   Setting</button>
+                            <button onclick="window.location.href='organizerInfoSetting.php'"> <i class="fas fa-cog"></i>   Setting</button>
                         </td>
                     </tr>
                 </table>
