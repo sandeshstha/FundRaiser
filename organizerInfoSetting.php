@@ -63,14 +63,14 @@
                     }
                       
                 ?>  
-
                 <h2><i class="fas fa-edit"></i>  Update Your Account Info</h2><br>
                 <form action="includes/organizerInfoSetting.inc.php" method="POST">
-                    Full Name: <input required type="text" name="fullname" pattern="[A-Za-z]+\s[[A-Za-z\s]+" value="<?php echo $data['organizer_fullname']; ?>" onKeyPress="change();"><br><br>
-                    Username: <input required type="text" name="username" value="<?php echo $data['organizer_username']; ?>" onKeyPress="change();"><br><br>
-                    Email: <input required type="email" name="email" value="<?php echo $data['organizer_email']; ?>" onKeyPress="change();"><br><br>
-                    Phone: <input required type="tel" name="phone" pattern="[9]{1}[0-9]{9}" value="<?php echo $data['organizer_phone']; ?>" onKeyPress="change();"><br><br>
-                    <input type="submit" name="submit" value="Update Changes" class="submit-btn active" id="submit" disabled>
+                    Full Name : <input required type="text" name="fullname" pattern="[A-Za-z]+\s[[A-Za-z\s]+" value="<?php echo $data['organizer_fullname']; ?>" onKeyPress="change();"><br><br>
+                    Username : <input required type="text" name="username" value="<?php echo $data['organizer_username']; ?>" onKeyPress="change();"><br><br>
+                    Email : <input required type="email" name="email" value="<?php echo $data['organizer_email']; ?>" onKeyPress="change();"><br><br>
+                    Phone : <input required type="tel" name="phone" pattern="[9]{1}[0-9]{9}" value="<?php echo $data['organizer_phone']; ?>" onKeyPress="change();"><br><br>
+                    <input type="submit" name="submit" value="Update Changes" class="submit-btn active" id="submit" disabled> 
+                    <!-- id="submit" is for js -->
                 </form>
             </div>
     <!-- Footer section -->
