@@ -6,8 +6,6 @@
     // echo $data['organizer_email'];
     // echo $data['organizer_password'];
     // echo $data['organizer_phone'];
-
-
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fund Raiser | Raise Fund At An Ease</title>
-    <link rel="stylesheet" href="assets/css/organizerHome.css">
+    <link rel="stylesheet" href="assets/css/organizerProfile.css">
 </head>
 
 <body>
@@ -48,11 +46,17 @@
         </div> -->
     </div>
 
+
     <!-- body part -->
 
-    <div class="buttonContainer">
-            <button class="organizerButtons" onclick="window.location.href='createCampaign.php'">Create Campaign</button>
-            <button class="organizerButtons" onclick="window.location.href='organizerProfile.php'">View Profile</button>
+    <div class="main-container">
+            <div class="about">
+
+            </div>
+
+            <div class="created-campaigns">
+            
+            </div>
     </div>
 
     <!-- Footer section -->
