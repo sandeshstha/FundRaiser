@@ -43,4 +43,5 @@ CREATE TABLE donors (
     `proof_image` varchar(255) not null,
     donor_approval tinyint(1) DEFAULT 0,
     donor_last_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    ALTER TABLE `donors` ADD `campaign_name` VARCHAR(30) NOT NULL AFTER `donated_amount`;
 );
