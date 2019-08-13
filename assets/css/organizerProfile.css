@@ -94,7 +94,7 @@ body {
     width: 40%;
     margin-left: 30%;
     height: 300px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .about table {
@@ -146,22 +146,27 @@ body {
 .created-campaigns {
     text-align: center; 
     align-content: center;
-    width: 40%;
-    margin-left: 30%;
-    height: 300px;
-    border: 1px solid red;
+    width: 100%;
+    /* border: 1px solid red; */
 }
 
 .created-campaigns table {
     border: none;
     text-align: center;
     align-content: center;
-    width: 70%;
-    margin-left: 73px;
+    width: 90%;
+    margin-left: 5%;
     border-collapse: collapse;
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.38);
     border-radius: 25px;
     
+}
+
+#waiting {
+    color: rgb(228, 48, 48);
+}
+#approved {
+    color: rgb(28, 158, 28);
 }
 
 
@@ -170,19 +175,28 @@ body {
 
 .footer {
     text-align: center;
-    position: fixed;
-    left: 0;
-    bottom: 2%;
     width: 100%;
-    font-family: HelveticaNeuethin;
-    color: #707070;
-    font-size: 14px;
-    word-spacing: 2px;
+    height: 50px;
+    font-family: HelveticaNeueThin;
+    color:black;
+    font-size: 15px;
+    margin-top: 5px;
+    bottom: 0;
+    /* border: 1px solid black; */
 }
 
 .footer a {
     text-decoration: none;
     color: inherit;
+    position: relative;
+    bottom: -20px;
+}
+
+.footer span {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    bottom: -20px;
 }
 
 .footer a:hover {
@@ -191,5 +205,5 @@ body {
 
 #footer-trademark {
     font-size: 16px;
-    color: #707070;
+    color: #591484;
 }

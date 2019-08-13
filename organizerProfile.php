@@ -88,7 +88,7 @@
 
             <div class="created-campaigns">
                 <h1>CAMPAIGNS CREATED</h1>
-
+<!-- show campaign of logged in organizer -->
                 <?php
                     include_once 'includes/dbh.inc.php';
 
@@ -101,9 +101,9 @@
               ?>
                 <table cellpadding="10">
                     <tr>
-                        <td>Campaign Name</td>
+                        <td style="width:20%;">Campaign Name</td>
                         <td>:</td>
-                        <td><?php echo $row['campaign_name'];?></td>
+                        <td style="width:80%;"><?php echo $row['campaign_name'];?></td>
                     </tr>
                     <tr>
                         <td>Campaign Type</td>
@@ -111,9 +111,36 @@
                         <td><?php echo $row['campaign_type'];?></td>
                     </tr>
                     <tr>
-                        <td>Campaign Type</td>
+                    <!-- to-do -->
+                        <td>Remaining Days(to-do)</td>
                         <td>:</td>
-                        <td><?php echo $row['campaign_type'];?></td>
+                        <td><?php echo $row['campaign_days'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Expected Amount</td>
+                        <td>:</td>
+                        <td><?php echo $row['campaign_amount'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Campaign Description</td>
+                        <td>:</td>
+                        <td><?php echo $row['campaign_description'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>:</td>
+                        <td><?php echo $row['campaignPhone'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>:</td>
+                        <td><?php
+                            if($row['campaignApproval']==0) {
+                                echo "<span id='waiting'>Waiting for Approval</span>";
+                            } else {
+                                echo "<span id='approved'>Approved</span>";
+                            }
+                        ?></td>
                     </tr>
                 </table><br><br>
            <?php    
