@@ -169,7 +169,22 @@ body {
     color: rgb(28, 158, 28);
 }
 
+#create-now-btn {
+    height: 60px;
+    width: 180px;
+    border-radius: 23px;
+    outline: none;
+    border: none;
+    background-color: #591484;
+    color: white;
+    font-family: HelveticaNeueMedium;
+    font-size: 25px; 
+}
 
+#create-now-btn:hover {
+    cursor: pointer;
+    font-size: 18px;
+}
 
 /* Footer section */
 

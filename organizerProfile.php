@@ -144,8 +144,15 @@
                     </tr>
                 </table><br><br>
            <?php    
+                    }
+                } else if($resultCheck == 0) {
+                    echo "<p>you have not created any campaign.</p>";
+            ?>
+                    <button id="create-now-btn" onclick="window.location.href='createCampaign.php'">Create Now</button>
+            <?php
+                } else {
+                    exit();
                 }
-            }
             ?>
             
             </div>
