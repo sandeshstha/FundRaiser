@@ -131,6 +131,10 @@ body {
     outline: none;
 }
 
+select {
+    text-align-last: center;
+}
+
 #campaignImage {
     font-family: HelveticaNeueMedium;
     font-size: 12px;
