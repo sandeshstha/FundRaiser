@@ -34,14 +34,17 @@
         </div>
 
         <div class="boxtwo">
-            <br><br><br>
+            <br>
             <form  method="POST" action="includes/donor.inc.php">
     
-                <input type="text" name="projectname" placeholder="Project Name" required><br><br><br>
+                
                 <input type="text" name="donorname" placeholder="Donor Name" required><br><br><br>
-                <input type="text" name="amount" placeholder="Amount"required><br><br><br>
-                <!-- <span id="receiptImage">Upload image of Bank-Receipt</span> <br> -->
-                <!-- <input type="file" name="receiptPhoto" accept="image/*"><br><br> -->
+                <input type="text" name="amount" placeholder="Donated Amount"required><br><br><br>
+                <input type="text" name="address" placeholder="Donor Address" required><br><br><br>
+               
+                <span id="receiptImage">Upload image of Bank-Receipt</span> <br>
+                <input type="file" name="receiptPhoto" accept="image/*"><br><br>
+                <input type="date" name="donorLastDate" placeholder="Donor Last Date" required><br><br><br>
                 <input type="submit" name="submit" value="Donate">
             </form>
         </div>

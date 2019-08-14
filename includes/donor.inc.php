@@ -6,13 +6,16 @@
 	} else {
 		 include_once 'dbh.inc.php'; //creating connection to database
 
-  		$projectName = $_POST['projectname'];
+  		
    		$donorName = $_POST['donorname'];
     	$amount = $_POST['amount'];
+      $address = $_POST['address'];
+      // $image = $_POST['receiptPhoto'];
+      $lastDate = $_POST['donorLastDate'];
     	// $receiptImage = $_POST['receiptimage'];
 
-    	$sql = "INSERT INTO donorslist(project_name, donor_name, amount ) VALUES('$projectName','$donorName','$amount');";
-            $insertSuccess = mysqli_query($conn, $sql);
+    	$sql = "INSERT INTO donors(donor_name,donated_amount,donor_address,donor_last_date)VALUES('$donorName','$amount','$address','$lastDate');";
+      $insertSuccess = mysqli_query($conn, $sql);
 // to-do
             // if campaign input data successfully inserted in database then redirect him to success page with link of organizer profile
             if($insertSuccess) {
