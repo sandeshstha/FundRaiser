@@ -12,4 +12,4 @@ if(!isset($organizerId)) { //try direct access
 
 $sql = "SELECT * FROM organizers WHERE organizer_id = $organizerId;";
 $result = mysqli_query($conn,$sql);
-$data = mysqli_fetch_assoc($result); //this is kto $row = resultset
+$data = mysqli_fetch_assoc($result); //this is  $row = resultset
