@@ -10,9 +10,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fund Raiser | Raise Fund At An Ease</title>
     <link rel="stylesheet" href="assets/css/campaigns.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Philosopher" rel="stylesheet">
 </head>
 
 <body>
@@ -62,14 +59,12 @@
                             $date = $row['campaign_reg_date'];
                             $date = strtotime($date);
                             $date = date('M D Y',$date);
-                            $_SESSION['c_reg_date'] = $date;
-
-
+                            $_SESSION['c_reg_date'] = $date;                 
                 ?>
                 <div class="preview-box">
                     <span id='campaign-name'><?php echo $_SESSION['c_name']; ?></span><br><br>
                     <span id='campaign-type'><?php echo $_SESSION['c_type']; ?></span><br><br>
-                    <button class="btn">Donate</button>
+                    <button class="btn" name="donate" onclick="window.location.href='singleCampaignPost.php'">Donate</button>
                 </div>   
                 <?php
                     }
