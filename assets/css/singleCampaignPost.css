@@ -102,9 +102,9 @@ body {
      /* border: 1px solid red; */
  }
 
- .image-caption {
-     font-size: 20px;
- }
+.container h1 {
+    text-transform: uppercase;
+}
 
  .container p {
      text-align: left;
@@ -123,6 +123,7 @@ body {
     font-family: HelveticaNeueMedium;
     text-align: center;
     padding: 10px 20px;
+    font-size: 20px;
   }
 
  .container h2 {
