@@ -29,7 +29,7 @@
             echo("failed");
                 ?>
                <?php
-                 $sql1="SELECT * FROM campaigns ";
+                 $sql1="SELECT * FROM campaigns WHERE campaignApproval='0'";
                  $result1=mysqli_query($conn,$sql1);
                  $num=1;
                  while($row= mysqli_fetch_assoc($result1))
