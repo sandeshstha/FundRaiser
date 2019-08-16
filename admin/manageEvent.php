@@ -41,7 +41,7 @@
                  		echo "<td>".$row['campaign_reg_date'];
                  		echo "<td>".$row['campaign_type'];
                         ?>
-                 		<td><form method='post' action='review.php'>
+                 		<td><form method='post' action='reviewEvent.php'>
                             <input type="hidden" name="id" value="<?php echo $row['campaign_id'];?> "><button type="submit" name="review" class="reviewButton">Review</button></form>
                  		<?php echo "</tr>";
                         $num++;
