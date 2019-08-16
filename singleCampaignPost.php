@@ -1,5 +1,15 @@
 <?php
-    session_start();
+    require_once 'includes/sessions.inc.php';
+    $campaignOrganizer = $data['organizer_fullname'];
+    $organizerPhone = $data['organizer_phone'];
+
+    $campaignType = $_SESSION['c_type'];
+    $campaignName = $_SESSION['c_name'];
+    echo $campaignName;
+    $estimateAmount = $_SESSION['c_amount'];
+    echo $estimateAmount;
+    $campaignDays = $_SESSION['c_days'];
+    echo $campaignDays;
 ?>
 
 <!DOCTYPE html>
@@ -43,10 +53,33 @@
                 <span>caption of the image</span>
             </div>
         </div><br><br>
-
-        <h2>Type of Campaign: -Natural Disaster-</h2>
-        <h2>Estimated Amount:  Rs.-23432-</h2>
-        <h2>Campaign will Expire after: -324234- days</h2>
+        <table cell>
+            <tr>
+                <td style="width: 50%;"><strong>Type Of Campaign</strong></td>
+                <td>:</td>
+                <td>-natural Disaster-</td>
+            </tr>
+            <tr>
+                <td><strong>Estimated Amount</strong></td>
+                <td>:</td>
+                <td>Rs. -23233-</td>
+            </tr>
+            <tr>
+                <td><strong>Estimated Amount</strong></td>
+                <td>:</td>
+                <td>-23-days</td>
+            </tr>
+            <tr>
+                <td><strong>Campaign organizer</strong></td>
+                <td>:</td>
+                <td><?php echo $campaignOrganizer;?></td>
+            </tr>
+            <tr>
+                <td><strong>Organizer's phone</strong></td>
+                <td>:</td>
+                <td><?php echo $organizerPhone;?></td>
+            </tr>
+        </table>
 
         <h2>About the Campaign</h2>
         <p>This is the description of the campaing.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur adipisci nihil, tempora cupiditate, possimus eveniet nemo totam corporis sit laudantium labore. Nihil recusandae numquam ipsum fuga officiis. Exercitationem, cumque quos?

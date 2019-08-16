@@ -46,7 +46,7 @@ if(!isset($_POST['submit'])) { //if one try to access createcampaign.inc.php wit
 // to-do
              // if campaign input data successfully inserted in database then redirect him to success page with link of organizer profile
              if($insertSuccess) {
-                echo "<h1>inserted into database</h1>";
+                // echo "<h1>inserted into database</h1>";
                 header("Location: ../assets/html/organizerCampaignSuccess.html");
              } else {
                  echo $conn->error;
