@@ -44,8 +44,9 @@
             </div>
         </div><br><br>
 
-        <h2>Estimated Amount:  </h2>
-        <p>This Campaign named -name of campaign- needs an estimated amount of -amount-. So let's make some donations from our side to help this campaign to reach it's goal.<p>
+        <h2>Type of Campaign: -Natural Disaster-</h2>
+        <h2>Estimated Amount:  Rs.-23432-</h2>
+        <h2>Campaign will Expire after: -324234- days</h2>
 
         <h2>About the Campaign</h2>
         <p>This is the description of the campaing.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur adipisci nihil, tempora cupiditate, possimus eveniet nemo totam corporis sit laudantium labore. Nihil recusandae numquam ipsum fuga officiis. Exercitationem, cumque quos?
@@ -63,10 +64,10 @@
     <!-- Footer section -->
 
     <div class="footer">
-          <a href="about.html">About | </a>
-         <a href="privacy-policy.html">Privacy Policy | </a>
-         <a href="terms.html">Terms and Conditions | </a>
-         <a href="help.html">Help (FAQs) |</a>
+          <a href="assets/html/about.html">About | </a>
+         <a href="assets/html/privacy-policy.html">Privacy Policy | </a>
+         <a href="assets/html/terms.html">Terms and Conditions | </a>
+         <a href="assets/html/help.html">Help (FAQs) |</a>
         <span id="footer-trademark">&copy; Fund Raiser, 2019 |</span>
     </div>
 
