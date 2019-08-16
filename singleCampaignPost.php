@@ -1,22 +1,35 @@
 <?php
-    require_once 'includes/sessions.inc.php';
-    $campaignOrganizer = $data['organizer_fullname'];
-    $organizerPhone = $data['organizer_phone'];
+    // require_once 'includes/sessions.inc.php';
+    // $campaignOrganizer = $data['organizer_fullname'];
+    // $organizerPhone = $data['organizer_phone'];
 
     if(isset($_GET['campaignId'])) {
         $campaignId = $_GET['campaignId'];
-        // echo $campaignId;
+
+        include 'includes/dbh.inc.php';
+
         $sql = "SELECT * FROM campaigns WHERE campaign_id = $campaignId;";
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
         if($resultCheck > 0) {
-            $row= mysqli_fetch_assoc($result); 
+            $row = mysqli_fetch_assoc($result); 
             $campaignName = $row['campaign_name'];
             $campaignType = $row['campaign_type'];
             $campaignDays = $row['campaign_days'];
             $campaignAmount = $row['campaign_amount'];
             $campaignDescription = $row['campaign_description'];
+            $campaignPhone = $row['campaignPhone'];
             $campaignImage = $row['campaignImage'];    
+
+            $campaignCreator = $row['campaignCreator']; //this is organizer's username
+            $sql = "SELECT organizer_fullname FROM organizers WHERE organizer_username = '$campaignCreator';";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            if($resultCheck > 0) {
+                $row = mysqli_fetch_assoc($result); 
+                $campaignCreatorFullname =  $row['organizer_fullname'];    
+            }
+            
         }
     }
 ?>
@@ -81,12 +94,12 @@
             <tr>
                 <td><strong>Campaign organizer</strong></td>
                 <td>:</td>
-                <td><?php echo $campaignOrganizer;?></td>
+                <td><?php echo $campaignCreatorFullname;?></td>
             </tr>
             <tr>
-                <td><strong>to-do Organizer's phone</strong></td>
+                <td><strong>Phone(related to Campaign)</strong></td>
                 <td>:</td>
-                <td><?php echo $organizerPhone;?></td>
+                <td><?php echo $campaignPhone;?></td>
             </tr>
         </table>
 
