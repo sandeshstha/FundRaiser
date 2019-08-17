@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +16,7 @@
         </a>
          
         <div class="nav-links">
-            <a href="#">CAMPAIGNS</a>
+            <a href="campaigns.php">CAMPAIGNS</a>
             <a href="#">DONORS</a>
         </div>
 
@@ -47,24 +43,13 @@
                     $resultCheck = mysqli_num_rows($result);            
                     if($resultCheck > 0) {
                         while($row = mysqli_fetch_assoc($result)) {
-                            $_SESSION['c_id'] = $row['campaign_id'];
-                            $_SESSION['c_name'] = $row['campaign_name'];
-                            $_SESSION['c_type'] = $row['campaign_type'];
-                            $_SESSION['c_days'] = $row['campaign_days'];
-                            $_SESSION['c_amount'] = $row['campaign_amount'];
-                            $_SESSION['c_description'] = $row['campaign_description'];
-                            $_SESSION['c_phone'] = $row['campaignPhone'];
-                            $_SESSION['c_image'] = $row['campaignImage']; //image path
-                            $_SESSION['c_creator'] = $row['campaignCreator'];
-                            $date = $row['campaign_reg_date'];
-                            $date = strtotime($date);
-                            $date = date('M D Y',$date);
-                            $_SESSION['c_reg_date'] = $date;                 
+                            $campaignId = $row['campaign_id'];
+                            // echo "$campaignId";               
                 ?>
                 <div class="preview-box">
-                    <span id='campaign-name'><?php echo $_SESSION['c_name']; ?></span><br><br>
-                    <span id='campaign-type'><?php echo $_SESSION['c_type']; ?></span><br><br>
-                    <button class="btn" name="donate" onclick="window.location.href='singleCampaignPost.php'">Donate</button>
+                    <span id='campaign-name'><?php echo $row['campaign_name']; ?></span><br><br>
+                    <span id='campaign-type'><?php echo $row['campaign_type']; ?></span><br><br>
+                    <button class="btn" type="submit" name="donate" onclick="window.location.href='singleCampaignPost.php?campaignId=<?php echo $campaignId;?>'">View Campaign</button>
                 </div>   
                 <?php
                     }

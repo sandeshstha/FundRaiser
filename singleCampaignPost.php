@@ -1,15 +1,35 @@
 <?php
-    require_once 'includes/sessions.inc.php';
-    $campaignOrganizer = $data['organizer_fullname'];
-    $organizerPhone = $data['organizer_phone'];
+    if(isset($_GET['campaignId'])) {
+        $campaignId = $_GET['campaignId'];
 
-    $campaignType = $_SESSION['c_type'];
-    $campaignName = $_SESSION['c_name'];
-    echo $campaignName;
-    $estimateAmount = $_SESSION['c_amount'];
-    echo $estimateAmount;
-    $campaignDays = $_SESSION['c_days'];
-    echo $campaignDays;
+        include 'includes/dbh.inc.php';
+
+        $sql = "SELECT * FROM campaigns WHERE campaign_id = $campaignId;";
+        $result = mysqli_query($conn, $sql);
+        $resultCheck = mysqli_num_rows($result);
+        if($resultCheck > 0) {
+            $row = mysqli_fetch_assoc($result); 
+            $campaignName = $row['campaign_name'];
+            $campaignType = $row['campaign_type'];
+            $campaignDays = $row['campaign_days'];
+            $campaignAmount = $row['campaign_amount'];
+            $campaignDescription = $row['campaign_description'];
+            $campaignPhone = $row['campaignPhone'];
+            $campaignImage = $row['campaignImage'];    
+
+            $campaignCreator = $row['campaignCreator']; //this is organizer's username
+
+            $sql = "SELECT organizer_fullname,organizer_phone FROM organizers WHERE organizer_username = '$campaignCreator';";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            if($resultCheck > 0) {
+                $data = mysqli_fetch_assoc($result); 
+                $organizerPhone = $data['organizer_phone'];
+                $campaignCreatorFullname =  $data['organizer_fullname'];    
+            }
+            
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +50,7 @@
         </a>
          
         <div class="nav-links">
-            <a href="#">CAMPAIGNS</a>
+            <a href="campaigns.php">CAMPAIGNS</a>
             <a href="#">DONORS</a>
         </div>
 
@@ -44,38 +64,43 @@
     <!-- body part -->
 
     <div class="container">
-        <h1>Heading of the Campaign</h1><br><br>
+        <h1><?php echo $campaignName;?></h1><br><br>
 
         <div class="c-image">
             <img src="assets/images/banner.png" alt="" ><br>
 
             <div class="image-caption">
-                <span>caption of the image</span>
+                <span><?php echo $campaignType;?>:(<?php echo $campaignName;?>)</span>
             </div>
         </div><br><br>
         <table cell>
             <tr>
                 <td style="width: 50%;"><strong>Type Of Campaign</strong></td>
                 <td>:</td>
-                <td>-natural Disaster-</td>
+                <td><?php echo $campaignType;?></td>
+            </tr>
+            <tr>
+                <td><strong>Estimated Days</strong></td>
+                <td>:</td>
+                <td><?php echo $campaignDays;?></td>
             </tr>
             <tr>
                 <td><strong>Estimated Amount</strong></td>
                 <td>:</td>
-                <td>Rs. -23233-</td>
-            </tr>
-            <tr>
-                <td><strong>Estimated Amount</strong></td>
-                <td>:</td>
-                <td>-23-days</td>
+                <td>Rs. <?php echo $campaignAmount;?></td>
             </tr>
             <tr>
                 <td><strong>Campaign organizer</strong></td>
                 <td>:</td>
-                <td><?php echo $campaignOrganizer;?></td>
+                <td><?php echo $campaignCreatorFullname;?></td>
             </tr>
             <tr>
-                <td><strong>Organizer's phone</strong></td>
+                <td><strong>Phone(Campaign Specific)</strong></td>
+                <td>:</td>
+                <td><?php echo $campaignPhone;?></td>
+            </tr>
+            <tr>
+                <td><strong>Phone(Organizer's)</strong></td>
                 <td>:</td>
                 <td><?php echo $organizerPhone;?></td>
             </tr>
@@ -88,7 +113,7 @@
         </p>
 
         <div class="donate-text">Donate For this Camaign</div> <br>
-        <button class="donate-btn" onclick="window.location.href='sandesh.php'">Donate</button>
+        <button class="donate-btn" onclick="window.location.href='donate.php'">Donate</button>
 
     </div>
 

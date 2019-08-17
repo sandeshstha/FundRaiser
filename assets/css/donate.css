@@ -93,81 +93,29 @@ body {
 
 /* body part */
 
- .container {
-     text-align: center;
-     color: #383636;
-     width: 80%;
-     margin-left: 10%;
-     font-family: HelveticaNeueMedium;
-     /* border: 1px solid red; */
- }
-
-.container h1 {
-    text-transform: uppercase;
-}
-
- .container p {
-     text-align: left;
-     line-height: 30px;
-     font-size: 20px;
- }
-
-.c-image {
-    width: 80%;
-    margin-left: 10%;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.image-caption {
-    font-family: HelveticaNeueMedium;
+.main-container {
     text-align: center;
-    padding: 10px 20px;
-    font-size: 20px;
-  }
-
- .container h2 {
-     text-align: left;  
- }
-
- .container table{
-     text-align: left;
-     width: 80%;
-     font-family: HelveticaNeueMedium;
-     font-size: 22px;
-     border-collapse: collapse;
- }
-
- td {
-     padding: 15px;
- }
-
- tr:hover 
- {
-     background-color: #f5f5f5;
-}
- 
- .donate-text {
-     font-size: 40px;
- }
-
- .donate-btn {
-    border: none;
-    outline: none;
-    background-color: #591484;
-    color: white;
-    height: 100px;
-    width: 350px;
-    border-radius: 25px;
+    color: #413939;
     font-family: HelveticaNeueMedium;
-    font-size: 50px;
-    font-weight: bold;
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.38);
 }
 
-.donate-btn:hover {
-    cursor: pointer;
-    font-size: 30px;
+.bank-details {
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    border: 1px solid red;
+}
+
+.banks {
+    text-align: left;
+
+}
+
+.khalti-details {
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    border: 1px solid red;
 }
 
 

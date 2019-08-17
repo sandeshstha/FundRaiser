@@ -15,7 +15,7 @@
         </a>
          
         <div class="nav-links">
-            <a href="#">CAMPAIGNS</a>
+            <a href="campaigns.php">CAMPAIGNS</a>
             
         </div>
 
