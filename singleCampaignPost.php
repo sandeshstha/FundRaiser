@@ -1,8 +1,4 @@
 <?php
-    // require_once 'includes/sessions.inc.php';
-    // $campaignOrganizer = $data['organizer_fullname'];
-    // $organizerPhone = $data['organizer_phone'];
-
     if(isset($_GET['campaignId'])) {
         $campaignId = $_GET['campaignId'];
 
@@ -22,12 +18,14 @@
             $campaignImage = $row['campaignImage'];    
 
             $campaignCreator = $row['campaignCreator']; //this is organizer's username
-            $sql = "SELECT organizer_fullname FROM organizers WHERE organizer_username = '$campaignCreator';";
+
+            $sql = "SELECT organizer_fullname,organizer_phone FROM organizers WHERE organizer_username = '$campaignCreator';";
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
             if($resultCheck > 0) {
-                $row = mysqli_fetch_assoc($result); 
-                $campaignCreatorFullname =  $row['organizer_fullname'];    
+                $data = mysqli_fetch_assoc($result); 
+                $organizerPhone = $data['organizer_phone'];
+                $campaignCreatorFullname =  $data['organizer_fullname'];    
             }
             
         }
@@ -97,9 +95,14 @@
                 <td><?php echo $campaignCreatorFullname;?></td>
             </tr>
             <tr>
-                <td><strong>Phone(related to Campaign)</strong></td>
+                <td><strong>Phone(Campaign Specific)</strong></td>
                 <td>:</td>
                 <td><?php echo $campaignPhone;?></td>
+            </tr>
+            <tr>
+                <td><strong>Phone(Organizer's)</strong></td>
+                <td>:</td>
+                <td><?php echo $organizerPhone;?></td>
             </tr>
         </table>
 
