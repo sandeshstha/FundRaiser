@@ -6,7 +6,7 @@
 </head>
 <body>
 	<?php 
-	include 'dashboard.html'
+	include 'dashboard.html';
 	  ?>
 	  <?php
        $conn=mysqli_connect("localhost","root","","FundRaiser");	  
@@ -31,7 +31,7 @@
 		while($row= mysqli_fetch_assoc($result1))
           {
           	?>
-		<form method="post" action="reviewDonorAction.php">
+		<form method="POST" action="includes/reviewDonorAction.php">
 			    <label class="label">Donor Name:</label><br>
 			    <input type="text" name="donorName" value="<?php echo $row['donor_name'];?>"><br><br>
                
@@ -40,7 +40,9 @@
                 <label class="label">Campaign Name:<br></label>
                 <input type="text" name="campaignName" value="<?php echo $row['campaign_name'];?>"><br><br>
                 <label class="label">Address:<br></label>
-                <input type="text" name="dAddress"  pattern="[0-9]{10}" value="<?php echo $row['donor_address'];?>" ><br><br>
+                <input type="text" name="dAddress"  value="<?php echo $row['donor_address'];?>" ><br><br>
+                <input type="hidden" name="id" value="<?php echo $row['donor_id'];?>">
+
                 <!-- to-do upload file -upload image only-->
                 <label class="label">Upload Proof<br></label>
                 <input type="text" name="campaignPhoto" value="<?php echo $row['proof_image'];?>"><br><br>
@@ -50,7 +52,7 @@
                 </center>    
 		</form>
 		<?php
-	}
+	   }
 	?>
 		<!-- $sql="UPDATE `campaigns` SET `campaign_name`=,`campaign_type`=[value-3],`campaign_days`=[value-4],`campaign_amount`=[value-5],`campaign_description`=[value-6],`camapignPhone`=[value-7],`campaign_reg_date`=[value-8] WHERE 1" -->
 	</div>

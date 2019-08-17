@@ -5,22 +5,21 @@ $conn=mysqli_connect("localhost","root","","FundRaiser");
 
 
 if (isset($_POST['accept'])) {
-	  	$id =$_POST['id'];
+	  	$id = $_POST['id'];
 	  	$row=$id;
+	  	$donorName=$_POST['donorName'];
+	  	$donatedAmount=$_POST['donatedAmount'];
 	  	$campaignName=$_POST['campaignName'];
-	  	$campaignType=$_POST['campaignType'];
-	  	$campaignDays=$_POST['campaignDays'];
-	  	$campaignAmount=$_POST['campaignAmount'];
-	  	$campaignDesription=$_POST['campaignDescription'];
-	  	$campaignPhone=$_POST['campaignPhone'];
+	  	$donorAddress=$_POST['dAddress'];
 	  	$approval='1';
+	  	echo $donorAddress;
 	  	
 
-	  	$sql="UPDATE `campaigns` SET `campaign_name`='$campaignName',`campaign_type`='$campaignType',`campaign_days`='$campaignDays',`campaign_amount`='$campaignAmount',`campaign_description`='$campaignDesription',`campaignPhone`='$campaignPhone', `campaignApproval`='$approval' WHERE campaign_id=$id ";
+	  	$sql="UPDATE `donors` SET `donor_name`='$donorName',`donated_amount`='$donatedAmount',`campaign_name`='$campaignName',`donor_address`='$donorAddress', `donor_approval`='$approval' WHERE donor_id=$id ";
 	  	$result1=mysqli_query($conn,$sql);
 	  	if($result1)
 	  	{
-	  		echo "okkkk";
+	  		echo "accepted Successfully";
 	  		
 	  	}
 
@@ -34,7 +33,7 @@ if (isset($_POST['accept'])) {
 	  	$campaignName=$_POST['campaignName'];
 	  	echo $campaignName;
 
-	  	$sql="DELETE FROM `campaigns` WHERE campaign_id=$id ";
+	  	$sql="DELETE FROM `donors` WHERE donor_id=$id ";
 	  	$result1=mysqli_query($conn,$sql);
 
 	  }
