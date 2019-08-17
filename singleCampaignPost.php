@@ -113,7 +113,7 @@
         </p>
 
         <div class="donate-text">Donate For this Camaign</div> <br>
-        <button class="donate-btn" onclick="window.location.href='sandesh.php'">Donate</button>
+        <button class="donate-btn" onclick="window.location.href='donate.php'">Donate</button>
 
     </div>
 

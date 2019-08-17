@@ -1,0 +1,157 @@
+@font-face 
+{
+    font-family: HelveticaNeueMedium ;
+    src : url(../fonts/HelveticaNeueMedium.otf);
+}
+
+@font-face 
+{
+    font-family: HelveticaNeueThin ;
+    src : url(../fonts/HelveticaNeueThin.otf);
+}
+
+@font-face 
+{
+    font-family: HelveticaNeueRegular ;
+    src : url(../fonts/HelveticaNeueRegular.ttf);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar {
+    height: 70px;
+    width: 100%;
+    box-shadow: 0 1px 3px #aaaaaa;  
+}
+
+.nav-bar img{
+    height: 50px;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.nav-links {
+    margin-top: -38px;
+    margin-left: 80px;
+    word-spacing: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #707070;
+    font-family: HelveticaNeueMedium;
+}
+
+.nav-links a:hover {
+    color: #591484;
+}
+
+/* login and signup button styling */
+.btn-login-signup {
+    position: absolute;
+    top: 10px;
+    left: 78%;
+    word-spacing: 15px;
+}
+
+/* code reuse for both button */
+.btn-login-signup button {
+    height: 50px;
+    width: 120px;
+    font-family: HelveticaNeueMedium;
+    outline: none;
+}
+
+#btn-login {
+    border: none;
+    background-color: white;
+    color: #707070;
+}
+
+#btn-login:hover {
+    border: none;
+    background-color: #591484;
+    cursor: pointer;
+    color: white;
+    border-radius: 25px;
+}
+
+#btn-signup {
+    border: none;
+    border-radius: 25px;
+    background-color: #591484;
+    color: white;
+}
+
+#btn-signup:hover {
+    cursor: pointer;
+}
+
+/* body part */
+
+.main-container {
+    text-align: center;
+    color: #413939;
+    font-family: HelveticaNeueMedium;
+}
+
+.bank-details {
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    border: 1px solid red;
+}
+
+.banks {
+    text-align: left;
+
+}
+
+.khalti-details {
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    border: 1px solid red;
+}
+
+
+/* Footer section */
+
+.footer {
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    font-family: HelveticaNeueThin;
+    color:black;
+    font-size: 15px;
+    margin-top: 5px;
+    bottom: 0;
+    /* border: 1px solid black; */
+}
+
+.footer a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    bottom: -20px;
+}
+
+.footer span {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    bottom: -20px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+#footer-trademark {
+    font-size: 16px;
+    color: #591484;
+}
