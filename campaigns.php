@@ -47,9 +47,11 @@
                             // echo "$campaignId";               
                 ?>
                 <div class="preview-box">
-                    <span id='campaign-name'><?php echo $row['campaign_name']; ?></span><br><br>
-                    <span id='campaign-type'><?php echo $row['campaign_type']; ?></span><br><br>
-                    <button class="btn" type="submit" name="donate" onclick="window.location.href='singleCampaignPost.php?campaignId=<?php echo $campaignId;?>'">View Campaign</button>
+                    <form action="singleCampaignPost.php?campaignId=<?php echo $campaignId;?>" method="POST">
+                        <span id='campaign-name'><?php echo $row['campaign_name']; ?></span><br><br>
+                        <span id='campaign-type'><?php echo $row['campaign_type']; ?></span><br><br>
+                        <button class="btn" type="submit" name="donate">View Campaign</button>
+                    </form>
                 </div>   
                 <?php
                     }

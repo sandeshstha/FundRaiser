@@ -35,13 +35,20 @@ CREATE TABLE campaigns (
     campaign_reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-CREATE TABLE donors (
+-- CREATE TABLE donors (
+--     donor_id int(11) AUTO_INCREMENT PRIMARY KEY not null,
+--     `donor_name` varchar(255) not null,
+--     donated_amount bigint not null,
+--     `donor_address` varchar(255) not null,
+--     `proof_image` varchar(255) not null,
+--     donor_approval tinyint(1) DEFAULT 0,
+--     donor_last_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+--     ALTER TABLE `donors` ADD `campaign_name` VARCHAR(30) NOT NULL AFTER `donated_amount`;
+-- );
+
+CREATE TABLE donors(
     donor_id int(11) AUTO_INCREMENT PRIMARY KEY not null,
-    `donor_name` varchar(255) not null,
-    donated_amount bigint not null,
-    `donor_address` varchar(255) not null,
-    `proof_image` varchar(255) not null,
-    donor_approval tinyint(1) DEFAULT 0,
-    donor_last_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    ALTER TABLE `donors` ADD `campaign_name` VARCHAR(30) NOT NULL AFTER `donated_amount`;
+    `donor_name` varchar(50) not null,
+    `donor_email` varchar(50) not null,
+    campaign_id int not null
 );

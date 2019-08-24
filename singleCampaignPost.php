@@ -1,4 +1,10 @@
 <?php
+    if(!isset($_POST['donate'])) { //if anyone try to access singlecampaignpost directly
+        header("Location: campaigns.php");
+    }
+?>
+
+<?php
     if(isset($_GET['campaignId'])) {
         $campaignId = $_GET['campaignId'];
 
@@ -26,8 +32,7 @@
                 $data = mysqli_fetch_assoc($result); 
                 $organizerPhone = $data['organizer_phone'];
                 $campaignCreatorFullname =  $data['organizer_fullname'];    
-            }
-            
+            }    
         }
     }
 ?>
@@ -59,7 +64,6 @@
             <button type="submit" id="btn-signup" onclick="window.location.href='signup.php'">SIGN UP</button>
         </div>
     </div>
-
 
     <!-- body part -->
 
@@ -107,17 +111,11 @@
         </table>
 
         <h2>About the Campaign</h2>
-        <p>This is the description of the campaing.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur adipisci nihil, tempora cupiditate, possimus eveniet nemo totam corporis sit laudantium labore. Nihil recusandae numquam ipsum fuga officiis. Exercitationem, cumque quos?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, debitis nesciunt. Accusamus quasi veniam quo explicabo omnis consequatur illo nihil adipisci repellat quos tempora nisi expedita eos minima, labore aliquid!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem necessitatibus vel at facilis quae libero adipisci? Vitae nisi aut totam, suscipit, ratione consectetur obcaecati tempore sint sit ducimus, beatae aperiam.
-        </p>
+        <p><?php echo $campaignDescription;?></p>
 
         <div class="donate-text">Donate For this Camaign</div> <br>
-        <button class="donate-btn" onclick="window.location.href='donate.php'">Donate</button>
-
+        <button class="donate-btn" onclick="window.location.href='donate.php?campaignId=<?php echo $campaignId;?>'">Donate</button>
     </div>
-
-  
 
     <!-- Footer section -->
 

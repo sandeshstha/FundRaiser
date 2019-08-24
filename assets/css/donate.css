@@ -99,16 +99,81 @@ body {
     font-family: HelveticaNeueMedium;
 }
 
+.methods {
+    text-align: left;
+    width: 66%;
+    height: 60px;
+    margin-left: 16%;
+    font-size: 20px;
+    /* border: 1px solid red; */
+}
+
 .bank-details {
     width: 80%;
     height: auto;
     margin-left: 10%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .banks {
     text-align: left;
 
+}
+
+.donor-notice {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.donor-form {
+    text-align: center;
+    width: 80%;
+    margin-top: 30px;
+    margin-left: 10%;
+    height:  300px;
+    /* border: 1px solid red; */
+}
+
+.boxtwo {
+    display: inline-block;
+    width: 60%;
+    height: 190px;
+    border: 1px solid #591484;
+    border-radius: 50px;
+}
+
+.boxtwo input[type=text], input[type=email] {
+    font-family: Helvetica;
+    font-size: 14px;
+    text-align: center;
+    width: 75%;
+    height: 35px;
+    border: 1px solid rgba(17, 17, 17, 0.774);
+    border-radius: 20px;
+    outline: none;
+}
+
+.boxtwo input[type=submit] {
+    width: 50%;
+    height: 45px;
+    outline: none;
+    background-color: #591484;
+    color: white;
+    font-size: 14px;
+    font-family: HelveticaNeueMedium;
+    border: 1px solid rgb(48, 43, 126);
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.boxtwo input[type=submit]:hover
+{
+    cursor: pointer;
+    font-family: HelveticaNeueThin;
+}
+
+ul {
+    text-align: left;
 }
 
 .khalti-details {

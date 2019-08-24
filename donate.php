@@ -1,3 +1,14 @@
+<?php
+
+    if(isset($_GET['campaignId'])) {
+        $campaignId = $_GET['campaignId'];
+        // echo $campaignId;
+    } else {
+        header("Location: campaigns.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +39,13 @@
 
     <!-- body part -->
     <div class="main-container">
-        <h1>Donate via Bank/Wire transfer</h1>
+        <h1>You can make donation in this campaign via two methods as:</h1>
+        <div class="methods">
+            <li>Donate via Bank | Wire transfer</li>
+            <li>Donate via Khalti | Online Payment Gateway</li>
+        </div>
+        <br><br><br>
+        <h1>Donate via Bank | Wire transfer</h1>
 
         <div class="bank-details">
             <h2>You can donate in this campaign via Bank Transfer. The Bank details are below:</h2>
@@ -85,16 +102,30 @@
                     </table>
                 </div>
             <br>
-            <p><strong>Enter your info below. So that we can track your donation and guide you for the donatation process.</strong></p>
-            <h1>suraj ko form comes here</h1>
+            <div class="donor-notice">Subscribe to Fund Raiser, So that we can track your donation and guide you for the donatation process. Once you submit your details, We will send you an email and you can submit the proof of the donation that you made. By doing this, you will be listed in our donor list as an donor.
+                The proof file can simply be:
+                <ul>
+                    <li><strong>Bank deposit voucher or receipt</strong> </li>
+                    <li><strong>Screenshot of the fund transfer success page(If donated via onine Banking or online payment wallet)</strong></li>
+                </ul>
+            </div><br>
+            <h2>Be in touch with us</h2>
+            <div class="donor-form">
+                <div class="boxtwo">
+                <br><br>
+                    <form action="includes/donate.inc.php?campaignId=<?php echo $campaignId;?>" method="POST">
+                    <!-- to-do full name html pattern -->
+                        <input type="text" name="fullname" placeholder="Enter full Name" required><br><br>
+                        <input type="email" name="email" placeholder="E-mail" required><br><br>
+                        <input type="submit" name="submit" value="Subscribe" id="submit">
+                    </form>
+                </div>
+            </div>
         </div>
-        <br><br>
-
         <h1>Donate via Khalti | Online Payment Gateway</h1>
 
         <div class="khalti-details">
             <h2>You can donate in this campaign via online payment gateway like Khalti.</h2>
-
         </div>
     </div>
 
