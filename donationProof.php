@@ -1,4 +1,14 @@
 <?php
+    if(!isset($_GET['donorId']) && !isset($_GET['campaignId']))
+    {
+        header("Location: campaigns.php");
+        exit();
+    } else {
+        $donorId = $_GET['donorId'];
+        $campaignId = $_GET['campaignId'];
+    }
+?>
+<?php
     include_once 'header.php';
 ?>
 
@@ -26,7 +36,7 @@
 
         <div class="boxtwo">
             <br><br>
-            <form action="includes/donationProof.inc.php?donor_id = to-do" method="POST" enctype="multipart/form-data">
+            <form action="includes/donationProof.inc.php?donorId=<?php echo $donorId;?>&campaignId=<?php echo $campaignId;?>" method="POST" enctype="multipart/form-data">
                 <input type="number" name="donatedAmount" placeholder="Enter amount you donated" required><br><br>
                 <input type="text" name="address" placeholder="Enter your address" required><br><br>
                 <!-- to-do upload file -upload image only-->
