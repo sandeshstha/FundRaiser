@@ -52,3 +52,12 @@ CREATE TABLE donors(
     `donor_email` varchar(50) not null,
     campaign_id int not null
 );
+
+CREATE TABLE donationProof(
+    donor_id int not null PRIMARY KEY,
+    donate_amount bigint not null,
+    donor_address varchar(200) not null,
+    proof_image varchar(255),
+    admin_approval tinyint(1) DEFAULT 0,
+    proof_submit_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
