@@ -26,7 +26,7 @@
 
         <div class="boxtwo">
             <br><br>
-            <form action="includes/donationProof.inc.php" method="POST" enctype="multipart/form-data">
+            <form action="includes/donationProof.inc.php?donor_id = to-do" method="POST" enctype="multipart/form-data">
                 <input type="number" name="donatedAmount" placeholder="Enter amount you donated" required><br><br>
                 <input type="text" name="address" placeholder="Enter your address" required><br><br>
                 <!-- to-do upload file -upload image only-->

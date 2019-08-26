@@ -8,6 +8,7 @@ if(!isset($_POST['submit'])) {
     $donatedAmount = $_POST['donatedAmount'];
     $address = $_POST['address'];
     $donorId = 1; //to-do pull it by get method in the url send via email
+    $campaignId = 1; //to-d0
     
     // for image part
     $filename = $_FILES['proofImage']['name'];
@@ -17,7 +18,7 @@ if(!isset($_POST['submit'])) {
     
     move_uploaded_file($tempname,$proofImagePath);
     // insert the input value into database
-    $sql = "INSERT INTO donationproof(donor_id, donate_amount, donor_address, proof_image) VALUES($donorId, $donatedAmount, '$address','$proofImagePath');";
+    $sql = "INSERT INTO donationproof(donor_id, campaign_id, donate_amount, donor_address, proof_image) VALUES($donorId, $campaignId, $donatedAmount, '$address','$proofImagePath');";
     $insertSuccess = mysqli_query($conn, $sql);
 // to-do
     // if($insertSuccess) {

@@ -37,7 +37,7 @@ if(!isset($_POST['submit'])) { //if one try to access signup.inc.php without acc
 
             if($insertSuccess) {
                 // send mail
-                $url = "http://localhost:8080/Fund-Raiser/includes/verifyEmail.inc.php?vkey=".$vkey;
+                $url = "http://localhost:8080/FundRaiser/includes/verifyEmail.inc.php?vkey=".$vkey;
                 $to = $email;
                 $subject = 'Email Verification';
                 $message = '<p>You can verify the email from the link below:</br>';

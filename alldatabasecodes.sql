@@ -54,7 +54,9 @@ CREATE TABLE donors(
 );
 
 CREATE TABLE donationProof(
-    donor_id int not null PRIMARY KEY,
+    donation_proof_id int not null PRIMARY KEY AUTO_INCREMENT,
+    donor_id int not null,
+    campaign_id int not null,
     donate_amount bigint not null,
     donor_address varchar(200) not null,
     proof_image varchar(255),
