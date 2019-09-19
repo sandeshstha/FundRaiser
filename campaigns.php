@@ -38,7 +38,7 @@
             <div class="all-campaigns">
                 <?php
                     include_once 'includes/dbh.inc.php';
-                    $sql = "SELECT * FROM campaigns WHERE campaignApproval = 1 and campaignExpiry = 1;";
+                    $sql = "SELECT * FROM campaigns WHERE campaignApproval = 1 and campaignExpiry = 1 ORDER BY campaign_id DESC;";
                     $result = mysqli_query($conn,$sql);
                     $resultCheck = mysqli_num_rows($result);            
                     if($resultCheck > 0) {

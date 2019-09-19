@@ -21,7 +21,7 @@
             $campaignAmount = $row['campaign_amount'];
             $campaignDescription = $row['campaign_description'];
             $campaignPhone = $row['campaignPhone'];
-            $campaignImage = $row['campaignImage'];    
+            $campaignImage = $row['campaignImage']; 
 
             $campaignCreator = $row['campaignCreator']; //this is organizer's username
 
@@ -71,7 +71,8 @@
         <h1><?php echo $campaignName;?></h1><br><br>
 
         <div class="c-image">
-            <img src="assets/images/banner.png" alt="" ><br>
+            <?php echo $campaignImage;?>
+            <img src="<?php echo $campaignImage; ?>" alt="" width="800"><br>
 
             <div class="image-caption">
                 <span><?php echo $campaignType;?>:(<?php echo $campaignName;?>)</span>

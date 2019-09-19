@@ -50,9 +50,9 @@
     <div class="proofInfo">
         <p>--Proof file requirements--</p>
         <ul>
-            <li>lskdjf</li>
-            <li>laksdjfklasjdf</li>
-            <li>alskdfjlaksdfj</li>
+            <li>Bank Deposit voucher</li>
+            <li>screenshot of success page of the Online payment</li>
+            <li>or any sort of papers related to the donation made which can be a proof.</li>
         </ul>
     </div>
 

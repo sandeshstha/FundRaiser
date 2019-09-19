@@ -29,7 +29,7 @@ if(!isset($_POST['submit'])) { //if one try to access createcampaign.inc.php wit
             $filename = $_FILES['campaignPhoto']['name'];
             $tempname = $_FILES['campaignPhoto']['tmp_name'];
             $filename = md5($filename.time());
-            $campaignImagePath = "../assets/images/campaignImages/".$filename;
+            $campaignImagePath = "assets/images/campaignImages/".$filename;
             
             move_uploaded_file($tempname,$campaignImagePath);
              // insert the input value into database
