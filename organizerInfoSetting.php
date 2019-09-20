@@ -73,16 +73,10 @@
                     <!-- id="submit" is for js -->
                 </form>
             </div>
-    <!-- Footer section -->
+    
+            <script src="assets/js/organizerInfoSetting.js"></script>
 
-    <div class="footer">
-          <a href="assets/html/about.html">About | </a>
-         <a href="assets/html/privacy-policy.html">Privacy Policy | </a>
-         <a href="assets/html/terms.html">Terms and Conditions | </a>
-         <a href="assets/html/help.html">Help (FAQs) |</a>
-        <span id="footer-trademark">&copy; Fund Raiser, 2019 |</span>
-    </div>
 
-    <script src="assets/js/organizerInfoSetting.js"></script>
-</body>
-</html>
+            <?php
+                include_once 'footer.php';
+            ?>
