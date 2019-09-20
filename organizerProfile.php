@@ -36,7 +36,7 @@
 
         <?php
             if(!isset($_SESSION['o_id'])) { 
-                header("Location: ../index.php");                
+                header("Location: index.php");                
             } else { //if organizers are logged in
                 echo '<form action="includes/logout.inc.php" method="POST">
                         <div class="btn-login-signup">
