@@ -10,14 +10,18 @@
 
         include 'includes/dbh.inc.php';
 
-        $sql = "SELECT * FROM campaigns WHERE campaign_id = $campaignId;";
+        $sql = "SELECT *,DATE(DATE_ADD(campaign_reg_date, INTERVAL campaign_days DAY)) AS endDate,
+        DATE(campaign_reg_date) AS startDate
+        FROM campaigns WHERE campaign_id = $campaignId;";
+
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
         if($resultCheck > 0) {
             $row = mysqli_fetch_assoc($result); 
             $campaignName = $row['campaign_name'];
             $campaignType = $row['campaign_type'];
-            $campaignDays = $row['campaign_days'];
+            $campaignStartDate = $row['startDate'];
+            $campaignEndDate = $row['endDate'];
             $campaignAmount = $row['campaign_amount'];
             $campaignDescription = $row['campaign_description'];
             $campaignPhone = $row['campaignPhone'];
@@ -85,9 +89,14 @@
                 <td><?php echo $campaignType;?></td>
             </tr>
             <tr>
-                <td><strong>Estimated Days</strong></td>
+                <td><strong>Campaign Stated On</strong></td>
                 <td>:</td>
-                <td><?php echo $campaignDays;?></td>
+                <td><?php echo $campaignStartDate;?></td>
+            </tr>
+            <tr>
+                <td><strong>Campaign will end On</strong></td>
+                <td>:</td>
+                <td><?php echo $campaignEndDate;?></td>
             </tr>
             <tr>
                 <td><strong>Estimated Amount</strong></td>

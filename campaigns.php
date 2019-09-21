@@ -1,3 +1,34 @@
+<!-- logic to remove expired campaign -->
+<?php
+    $currentDate = date('Y-m-d');
+
+    include_once 'includes/dbh.inc.php';
+    $sql = "SELECT campaign_id,DATE(DATE_ADD(campaign_reg_date, INTERVAL campaign_days DAY)) AS endDate,
+        DATE(campaign_reg_date) AS startDate
+        FROM campaigns;";
+
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+    if($resultCheck > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+            $campaignId = $row['campaign_id'];
+            $campaignStartDate = $row['startDate'];
+            $campaignEndDate = $row['endDate'];
+            echo $campaignStartDate;
+            echo $campaignEndDate;
+            echo $campaignId;
+            echo "<br>";
+            if($currentDate > $campaignEndDate) {
+                $sql = "UPDATE campaigns
+                        SET campaignExpiry = 0 
+                        WHERE campaign_id = '$campaignId';";
+                mysqli_query($conn, $sql);
+            }
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,14 +61,10 @@
     <!-- body part -->
 
     <div class="main-container">
-
             <h2>Here below are some campaigns where you can Donate Funds as much as you like.</h2>
 
-
-        
             <div class="all-campaigns">
                 <?php
-                    include_once 'includes/dbh.inc.php';
                     $sql = "SELECT * FROM campaigns WHERE campaignApproval = 1 and campaignExpiry = 1 ORDER BY campaign_id DESC;";
                     $result = mysqli_query($conn,$sql);
                     $resultCheck = mysqli_num_rows($result);            
