@@ -56,7 +56,7 @@
                     $resultCheck = mysqli_num_rows($result);            
                     if($resultCheck > 0) {
                         while($row = mysqli_fetch_assoc($result)) {
-                            $counter = 1;
+                            static $counter = 1;
                             // $donorId = $row['donor_id'];
                             // $campaignId = $row['campaign_id'];
                             $donorName = $row['donor_name'];

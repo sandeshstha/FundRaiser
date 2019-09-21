@@ -29,7 +29,7 @@
          
         <div class="nav-links">
             <a href="campaigns.php">CAMPAIGNS</a>
-            <a href="#">DONORS</a>
+            <a href="donors.php">DONORS</a>
         </div>
 
         <?php
