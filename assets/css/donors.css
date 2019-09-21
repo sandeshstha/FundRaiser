@@ -50,7 +50,7 @@ body {
     color: #591484;
 }
 
-/* login and signup button */
+/* login and signup button styling */
 .btn-login-signup {
     position: absolute;
     top: 10px;
@@ -91,43 +91,53 @@ body {
     cursor: pointer;
 }
 
-
-
-
-
-.titleOfTable{
-	padding-top: 20px;
-	/*margin-left:5%;*/
-	font-weight: bold;
-	text-align: center;
-	font-size: 30px;
-	color: rgb(0,0,0,0.7);
+/* body part */
+.main-container {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    color: #707070;
 }
 
+.text-content h1{
+    font-family: HelveticaNeueMedium;
+	text-align: center;
+	color: #707070;
+}
 
+.text-content p {
+    text-align: center;
+    font-size: 20px;
+    font-family: HelveticaNeueThin;
+}
+/* donor table */
 table {
 	padding-top: 20px;
-	margin-left: 15%;
-	font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
-	width: 70%;
+	margin-left: 1%;
+	font-family: HelveticaNeueRegular;
+	width: 98%;
 	border-collapse: collapse;
-	
 }
-table td,th{
+
+table td,th {
 	border: 1px solid #ddd;
 	padding: 8px;
-	
 }
-table td ,td{
+
+table td {
 	margin-left: 20px;
-	margin-top: 10px;
+    margin-top: 10px;
+    text-align: left;    
 }
-table tr:nth-child(even){
+
+table tr:nth-child(even) {
 	background-color: #f2f2f2;
-	}
-table tr:hover{
+}
+
+table tr:hover {
 	background-color: #ddd;
 }
+
 table th {
   padding-top: 12px;
   padding-bottom: 12px;
@@ -140,18 +150,28 @@ table th {
 
 .footer {
     text-align: center;
-    position: fixed;
-    left: 0;
-    bottom: 2%;
     width: 100%;
+    height: 50px;
     font-family: HelveticaNeueThin;
     color:black;
     font-size: 15px;
+    margin-top: 5px;
+    bottom: 0;
+    /* border: 1px solid black; */
 }
 
 .footer a {
     text-decoration: none;
     color: inherit;
+    position: relative;
+    bottom: -20px;
+}
+
+.footer span {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    bottom: -20px;
 }
 
 .footer a:hover {
