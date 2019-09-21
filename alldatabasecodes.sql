@@ -32,7 +32,7 @@ CREATE TABLE campaigns (
     campaignApproval tinyint(1) DEFAULT 0,
     campaignExpiry tinyint(1) DEFAULT 1,
     campaignCreator varchar(255) not null,
-    campaign_reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    campaign_reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- CREATE TABLE donors (

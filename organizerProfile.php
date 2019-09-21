@@ -1,11 +1,5 @@
 <?php
     include 'includes/sessions.inc.php';
-    // echo $data['organizer_id'];
-    // echo $data['organizer_fullname'];
-    // echo $data['organizer_username'];
-    // echo $data['organizer_email'];
-    // echo $data['organizer_password'];
-    // echo $data['organizer_phone'];
     $campaignCreator = $data['organizer_username'];
 ?>
 
@@ -45,18 +39,11 @@
                       </form>';
             }
         ?>
-        <!-- <div class="btn-login-signup">
-            <button type="submit" id="btn-login" onclick="window.location.href='includes/logout.inc.php'">LOGOUT</button>
-        </div> -->
     </div>
-
-
     <!-- body part -->
-
     <div class="main-container">
             <div class="about">
                 <h1>ABOUT</h1>
-
                 <table>
                     <tr>
                         <td>Full Name</td>
@@ -92,12 +79,13 @@
                 <?php
                     include_once 'includes/dbh.inc.php';
 
-                    $sql = "SELECT * FROM campaigns WHERE campaignCreator = '$campaignCreator';";
+                    $sql = "SELECT *, DATE(DATE_ADD(campaign_reg_date, INTERVAL campaign_days DAY)) AS endDate,
+                    DATE(campaign_reg_date) AS startDate 
+                    FROM campaigns WHERE campaignCreator = '$campaignCreator';";
                     $result = mysqli_query($conn, $sql);
                     $resultCheck = mysqli_num_rows($result);
                     if($resultCheck > 0) {  
                         while($row = mysqli_fetch_assoc($result)) {
-
               ?>
                 <table cellpadding="10">
                     <tr>
@@ -111,15 +99,19 @@
                         <td><?php echo $row['campaign_type'];?></td>
                     </tr>
                     <tr>
-                    <!-- to-do -->
-                        <td>Remaining Days(to-do)</td>
+                        <td>Campaign Started On:</td>
                         <td>:</td>
-                        <td><?php echo $row['campaign_days'];?></td>
+                        <td><?php echo $row['startDate'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Campaign will end On:</td>
+                        <td>:</td>
+                        <td><?php echo $row['endDate'];?></td>
                     </tr>
                     <tr>
                         <td>Expected Amount</td>
                         <td>:</td>
-                        <td><?php echo $row['campaign_amount'];?></td>
+                        <td>NPR: <?php echo $row['campaign_amount'];?></td>
                     </tr>
                     <tr>
                         <td>Campaign Description</td>

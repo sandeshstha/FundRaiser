@@ -40,7 +40,7 @@
                 <th width="5%">S.N</th>
                 <th width="15%">Donor Name</th>
                 <th width="30%">Address</th>
-                <th width="25%">Donated Amount</th>
+                <th width="25%">Donated Amount (NPR)</th>
                 <th width="25%">campaign</th>
             </tr>
             <!-- logic to display donors -->
