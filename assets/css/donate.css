@@ -183,6 +183,24 @@ ul {
     border: 1px solid red;
 }
 
+#payment-button {
+    width: 150px;
+    height: 40px;
+    outline: none;
+    border: none;
+    background-color: #591484;
+    color: white;
+    font-size: 14px;
+    font-family: HelveticaNeueThin;
+    border: 1px solid rgb(48, 43, 126);
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+#payment-button:hover {
+    cursor: pointer;
+    font-family: HelveticaNeueMedium;
+}
 
 /* Footer section */
 

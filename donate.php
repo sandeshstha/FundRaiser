@@ -17,6 +17,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fund Raiser | Raise Fund At An Ease</title>
     <link rel="stylesheet" href="assets/css/donate.css">
+
+    <script src="https://khalti.com/static/khalti-checkout.js"></script>
 </head>
 <body>
 
@@ -126,8 +128,37 @@
 
         <div class="khalti-details">
             <h2>You can donate in this campaign via online payment gateway like Khalti.</h2>
+            <button id="payment-button">Pay with Khalti</button>
         </div>
     </div>
+
+    <script>
+        var config = {
+            // replace the publicKey with yours
+            "publicKey": "test_public_key_dd21924111ba4f66a1abbddcf6eded68",
+            "productIdentity": "1234567890",
+            "productName": "Fund Raiser",
+            "productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
+            "eventHandler": {
+                onSuccess (payload) {
+                    // hit merchant api for initiating verfication
+                    console.log(payload);
+                },
+                onError (error) {
+                    console.log(error);
+                },
+                onClose () {
+                    console.log('widget is closing');
+                }
+            }
+        };
+
+        var checkout = new KhaltiCheckout(config);
+        var btn = document.getElementById("payment-button");
+        btn.onclick = function () {
+            checkout.show({amount: 1000});
+        }
+    </script>
 
     <?php
         include_once 'footer.php';

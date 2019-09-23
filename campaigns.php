@@ -14,10 +14,6 @@
             $campaignId = $row['campaign_id'];
             $campaignStartDate = $row['startDate'];
             $campaignEndDate = $row['endDate'];
-            echo $campaignStartDate;
-            echo $campaignEndDate;
-            echo $campaignId;
-            echo "<br>";
             if($currentDate > $campaignEndDate) {
                 $sql = "UPDATE campaigns
                         SET campaignExpiry = 0 
