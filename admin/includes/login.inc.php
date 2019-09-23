@@ -15,7 +15,7 @@ if(isset($_POST['submit'])) {
 
     if($resultCheck == 1) { //as there is only one admin
         $_SESSION['admin_username'] = $username;
-        header("Location: ../dashboard.html");
+        header("Location: ../home.php");
     } else {
         header("Location: ../index.php?login=failed");
     }

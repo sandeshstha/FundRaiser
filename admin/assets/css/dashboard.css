@@ -83,14 +83,14 @@ body {
 }
 
 
-#btn-login {
+#btn-logout {
     border: none;
     border-radius: 25px;
     background-color: #591484;
     color: white;
 }
 
-#btn-login:hover {
+#btn-logout:hover {
     cursor: pointer;
 }
 .menuSection{

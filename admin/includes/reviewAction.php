@@ -20,7 +20,7 @@ if (isset($_POST['accept'])) {
 	  	$result1=mysqli_query($conn,$sql);
 	  	if($result1)
 	  	{
-	  		echo "okkkk";
+	  		header("Location: ../successMessage.php?message=accept");
 	  		
 	  	}
 
@@ -36,29 +36,11 @@ if (isset($_POST['accept'])) {
 
 	  	$sql="DELETE FROM `campaigns` WHERE campaign_id=$id ";
 	  	$result1=mysqli_query($conn,$sql);
+	  	
+	  	header("Location: ../successMessage.php?message1=delete");
 
 	  }
 
 	  ?>
 	  
-	  <!DOCTYPE html>
-	  <html>
-	  <head>
-	  	<title></title>
-	  </head>
-	  <body>
-	  	<div>
-	  	    Campaign has been 
-	  	    <?php if (isset($_POST['accept']))
-	  	    {
-	  	    	echo "reviewed and accepted Successfully";
-	  	    }
-	  	    else{
-	  	    	echo "reviewed and deleted Successfully";
-
-	  	    }
-	  	    ?>
-	  	</div>
-	  
-	  </body>
-	  </html>
+	 

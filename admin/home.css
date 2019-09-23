@@ -1,0 +1,81 @@
+@font-face 
+{
+    font-family: HelveticaNeueMedium ;
+    src : url(../fonts/HelveticaNeueMedium.otf);
+}
+
+@font-face 
+{
+    font-family: HelveticaNeueThin ;
+    src : url(../fonts/HelveticaNeueThin.otf);
+}
+
+@font-face 
+{
+    font-family: HelveticaNeueRegular ;
+    src : url(../fonts/HelveticaNeueRegular.ttf);
+}
+
+.titleOfTable{
+	margin-left: 290px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 40px;
+	color: #707070;
+	font-family: HelveticaNeueMedium;
+
+}
+
+.main_div{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 3px;
+  font-family: HelveticaNeueThin;
+
+  */color: green;
+
+}
+
+
+.numberOfCamp,.numberOfOrganizer,.amountCollected,.totalDonors{
+	width: 300px;
+	height: 250px;
+	background-color: rgba(89, 20, 132, 0.8);
+	
+	margin-top:10px;
+	border-radius: 20px;
+}
+.numberOfOrganizer,.totalDonors{
+	background-color: rgba(63, 132, 20, 0.8);
+}
+.numberOfCamp{
+	/*position: relative;*/
+
+}
+.numberOfOrgarnizer{
+
+	
+
+}
+.amountCollected{
+	
+
+
+}
+.totalDonors{
+	
+
+}
+.countCampaign,.countOrganizer,.countAmount,.countDonors{
+	margin-top: 22px;
+	color: rgba(255,255,255,0.9);
+	border-radius: 30px;
+}
+.countOrganizer,.countDonors{
+	/*background-color: rgb(0,0,0,0.40);*/
+}
+.countCampaign,.countAmount{
+	/*background-color: rgb(0,0,0,0.40);*/
+	
+}
