@@ -99,15 +99,6 @@ body {
     font-family: HelveticaNeueMedium;
 }
 
-.methods {
-    text-align: left;
-    width: 66%;
-    height: 60px;
-    margin-left: 16%;
-    font-size: 20px;
-    /* border: 1px solid red; */
-}
-
 .bank-details {
     width: 80%;
     height: auto;
@@ -180,7 +171,7 @@ ul {
     width: 80%;
     height: auto;
     margin-left: 10%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #payment-button {

@@ -41,12 +41,7 @@
 
     <!-- body part -->
     <div class="main-container">
-        <h1>You can make donation in this campaign via two methods as:</h1>
-        <div class="methods">
-            <li>Donate via Bank | Wire transfer</li>
-            <li>Donate via Khalti | Online Payment Gateway</li>
-        </div>
-        <br><br><br>
+        <br>
         <h1>Donate via Bank | Wire transfer</h1>
 
         <div class="bank-details">
@@ -124,14 +119,20 @@
                 </div>
             </div>
         </div>
+        <hr>
+        <br>
+        <br>
+        <br>
         <h1>Donate via Khalti | Online Payment Gateway</h1>
 
         <div class="khalti-details">
             <h2>You can donate in this campaign via online payment gateway like Khalti.</h2>
-            <button id="payment-button">Pay with Khalti</button>
+            <button id="payment-button">Donate with Khalti</button>
         </div>
     </div>
-
+    <br>
+    <br>
+    <br>
     <script>
         var config = {
             // replace the publicKey with yours
