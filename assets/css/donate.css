@@ -175,14 +175,13 @@ ul {
 }
 
 #payment-button {
-    width: 150px;
-    height: 40px;
+    width: 25%;
+    height: 45px;
     outline: none;
-    border: none;
     background-color: #591484;
     color: white;
     font-size: 14px;
-    font-family: HelveticaNeueThin;
+    font-family: HelveticaNeueMedium;
     border: 1px solid rgb(48, 43, 126);
     border-radius: 20px;
     margin-top: 10px;
@@ -190,7 +189,7 @@ ul {
 
 #payment-button:hover {
     cursor: pointer;
-    font-family: HelveticaNeueMedium;
+    font-family: HelveticaNeueThin;
 }
 
 /* Footer section */

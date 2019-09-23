@@ -45,7 +45,7 @@
         <h1>Donate via Bank | Wire transfer</h1>
 
         <div class="bank-details">
-            <h2>You can donate in this campaign via Bank Transfer. The Bank details are below:</h2>
+            <h2>You can donate in this campaign via Bank Transfer. The Bank details are below:</h2><hr>
                 <div class="banks">
                     <table>
                         <tr>
@@ -98,14 +98,14 @@
                         </tr>
                     </table>
                 </div>
-            <br>
+            <br><hr>
             <div class="donor-notice">Subscribe to Fund Raiser, So that we can track your donation and guide you for the donatation process. Once you submit your details, We will send you an email and you can submit the proof of the donation that you made. By doing this, you will be listed in our donor list as an donor.
                 The proof file can simply be:
                 <ul>
                     <li><strong>Bank deposit voucher or receipt</strong> </li>
                     <li><strong>Screenshot of the fund transfer success page(If donated via onine Banking or online payment wallet)</strong></li>
                 </ul>
-            </div><br>
+            </div><br><hr>
             <h2>Be in touch with us</h2>
             <div class="donor-form">
                 <div class="boxtwo">
@@ -160,7 +160,9 @@
             checkout.show({amount: 1000});
         }
     </script>
-
+    <br>
+    <hr>
+    <br> <br>
     <?php
         include_once 'footer.php';
     ?>
