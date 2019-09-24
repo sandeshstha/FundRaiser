@@ -12,14 +12,15 @@ if (isset($_POST['accept'])) {
 	  	$campaignName=$_POST['campaignName'];
 	  	$donorAddress=$_POST['dAddress'];
 	  	$approval='1';
-	  	echo $donorAddress;
+	  
 	  	
 
-	  	$sql="UPDATE `donors` SET `donor_name`='$donorName',`donated_amount`='$donatedAmount',`campaign_name`='$campaignName',`donor_address`='$donorAddress', `donor_approval`='$approval' WHERE donor_id=$id ";
+	  	$sql="UPDATE donors,donationproof,campaigns SET `donor_name`='$donorName',`donate_amount`='$donatedAmount',`campaign_name`='$campaignName',`donor_address`='$donorAddress', `donor_approval`='$approval' WHERE donor_id=$id ";
 	  	$result1=mysqli_query($conn,$sql);
 	  	if($result1)
 	  	{
-	  		echo "accepted Successfully";
+	  		echo "hello";
+	  		header("Location: ../successMessage1.php?message=accept");
 	  		
 	  	}
 
@@ -35,29 +36,10 @@ if (isset($_POST['accept'])) {
 
 	  	$sql="DELETE FROM `donors` WHERE donor_id=$id ";
 	  	$result1=mysqli_query($conn,$sql);
+	  	header("Location: ../successMessage1.php?message1=delete");
 
 	  }
 
 	  ?>
 	  
-	  <!DOCTYPE html>
-	  <html>
-	  <head>
-	  	<title></title>
-	  </head>
-	  <body>
-	  	<div>
-	  	    Campaign has been 
-	  	    <?php if (isset($_POST['accept']))
-	  	    {
-	  	    	echo "reviewed and accepted Successfully";
-	  	    }
-	  	    else{
-	  	    	echo "reviewed and deleted Successfully";
-
-	  	    }
-	  	    ?>
-	  	</div>
 	  
-	  </body>
-	  </html>

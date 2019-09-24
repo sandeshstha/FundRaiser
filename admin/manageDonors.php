@@ -19,7 +19,7 @@
                     <th>Campaign Name</th>
                     <th>Amount</th>
                     <th>Address</th>
-                    <th>Details</th>
+                    <th>Action</th>
                 </tr>
                 <?php
                     $conn = mysqli_connect("localhost","root","","FundRaiser");
@@ -49,7 +49,7 @@
                 ?>
                             <td>
                                 <form method='post' action='reviewDonors.php'>
-                                    <input type="text" name="id" value="<?php echo $row['donor_id'];?> ">
+                                    <input type="hidden" name="id" value="<?php echo $row['donor_id'];?> ">
                                     <button type="submit" name="review" class="reviewButton">Review</button>
                                 </form>
                             </td>

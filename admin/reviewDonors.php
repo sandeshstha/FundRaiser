@@ -19,8 +19,12 @@
 	  }
 	  ?>
 	  <?php
-	  $sql1="SELECT * FROM donors WHERE donor_id=$id";
+	  $sql1="SELECT * FROM donors,donationproof
+                        WHERE donors.donor_id = donationproof.donor_id
+                        AND donors.campaign_id = donationproof.campaign_id ;";
+                 $result = mysqli_query($conn , $sql);
       $result1=mysqli_query($conn,$sql1); 
+
 	  
 	  ?>
 	<div class="titleDiv">
@@ -36,9 +40,18 @@
 			    <input type="text" name="donorName" value="<?php echo $row['donor_name'];?>"><br><br>
                
                 <label class="label">Donated Amount<br></label>
-                <input type="text" min="1" name="donatedAmount" value="<?php echo $row['donated_amount'];?>"><br><br>
+                <input type="text" min="1" name="donatedAmount" value="<?php echo $row['donate_amount'];?>"><br><br>
                 <label class="label">Campaign Name:<br></label>
-                <input type="text" name="campaignName" value="<?php echo $row['campaign_name'];?>"><br><br>
+                <input type="text" name="campaignName" value="<?php 
+               $c_id = $row['campaign_id'];
+                            $sql1 = "SELECT campaign_name,campaign_id FROM campaigns
+                            WHERE campaign_id = '$c_id';";
+                            $result1 = mysqli_query($conn, $sql1);
+                            $row1 = mysqli_fetch_assoc($result1);
+                            $c_name = $row1['campaign_name'];
+
+                            echo $c_name;
+                            ?>"><br><br>
                 <label class="label">Address:<br></label>
                 <input type="text" name="dAddress"  value="<?php echo $row['donor_address'];?>" ><br><br>
                 <input type="hidden" name="id" value="<?php echo $row['donor_id'];?>">
