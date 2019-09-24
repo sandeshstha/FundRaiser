@@ -29,7 +29,6 @@
 	  $sql1="SELECT * FROM donors,donationproof
                         WHERE donors.donor_id = donationproof.donor_id
                         AND donors.campaign_id = donationproof.campaign_id ;";
-                 $result = mysqli_query($conn , $sql);
       $result1=mysqli_query($conn,$sql1); 
 
 	  
