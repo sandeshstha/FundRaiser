@@ -9,8 +9,9 @@
 	<?php
 	include'dashboard.html';
 	?>
-<div class="tableoFCampaign">
-        <div ><div class="titleOfTable">Donors on Review</div>
+    <div class="tableoFCampaign">
+        <div >
+            <div class="titleOfTable">Donors on Review</div>
             <table>
                 <tr>
                     <th>S.N</th>
@@ -21,45 +22,44 @@
                     <th>Details</th>
                 </tr>
                 <?php
-                $conn=mysqli_connect("localhost","root","","FundRaiser");
-                if($conn)  
-        {
-            // echo("Connected Successfully");
-        }
-        else
-            echo("failed");
+                    $conn = mysqli_connect("localhost","root","","FundRaiser");
                 ?>
                <?php
-                 $sql1="SELECT * FROM donors,donationproof ";
-                 $result1=mysqli_query($conn,$sql1);
-                 while($row= mysqli_fetch_assoc($result1))
+                 $sql = "SELECT * FROM donors,donationproof
+                        WHERE donors.donor_id = donationproof.donor_id
+                        AND donors.campaign_id = donationproof.campaign_id ;";
+                 $result = mysqli_query($conn , $sql);
+                 while($row = mysqli_fetch_assoc($result))
                  	{
-                        $num=1;
+                        static $num=1;
                  		echo "<tr>";
-                 		echo "<td>".$num;
-                 		echo "<td>".$row['donors.donor_name'];
-                 		echo "<td>".$row['campaign_name'];
-                 		echo "<td>".$row['donated_amount'];
-                        echo "<td>".$row['donor_last_date'];
-                        ?>
-                            
-                 		<td><form method='post' action='reviewDonors.php'>
-                            <input type="text" name="id" value="<?php echo $row['donor_id'];?> "><button type="submit" name="review" class="reviewButton">Review</button></form>
-                        <?php echo "</tr>";
-                        $num++;
-                
-                 	
-                 	}
-                 
+                            echo "<td>".$num++."</td>";
+                            echo "<td>".$row['donor_name']."</td>";
 
-                 	?>
-                
-    
- 
+                            $c_id = $row['campaign_id'];
+                            $sql1 = "SELECT campaign_name,campaign_id FROM campaigns
+                            WHERE campaign_id = '$c_id';";
+                            $result1 = mysqli_query($conn, $sql1);
+                            $row1 = mysqli_fetch_assoc($result1);
+                            $c_name = $row1['campaign_name'];
 
+                            echo "<td>".$c_name."</td>";
+                            echo "<td>".$row['donate_amount']."</td>";
+                            echo "<td>".$row['donor_address']."</td>";
+                ?>
+                            <td>
+                                <form method='post' action='reviewDonors.php'>
+                                    <input type="text" name="id" value="<?php echo $row['donor_id'];?> ">
+                                    <button type="submit" name="review" class="reviewButton">Review</button>
+                                </form>
+                            </td>
+                        </tr>
+                <?php   
+                    }
+                ?>
+                
             </table>
         </div>
-
     </div>
 </div>
 </div>
