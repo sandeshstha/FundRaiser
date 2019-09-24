@@ -13,7 +13,8 @@
 	<center>Profile Of Fund Raiser</center>
 	<div class="main_div">
 		<div class="numberOfCamp">
-			<div class="countCampaign">Campaigns</div>
+			<div class="countCampaign">Campaigns
+				<span></span></div>
 		</div>
 		<div class="numberOfOrganizer">
 			<div class="countOrganizer">Organizers</div>

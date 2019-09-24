@@ -17,7 +17,7 @@
                     <th>Donors Name</th>
                     <th>Campaign Name</th>
                     <th>Amount</th>
-                    <th>Time</th>
+                    <th>Address</th>
                     <th>Details</th>
                 </tr>
                 <?php
@@ -30,14 +30,14 @@
             echo("failed");
                 ?>
                <?php
-                 $sql1="SELECT * FROM donors ";
+                 $sql1="SELECT * FROM donors,donationproof ";
                  $result1=mysqli_query($conn,$sql1);
                  while($row= mysqli_fetch_assoc($result1))
                  	{
                         $num=1;
                  		echo "<tr>";
                  		echo "<td>".$num;
-                 		echo "<td>".$row['donor_name'];
+                 		echo "<td>".$row['donors.donor_name'];
                  		echo "<td>".$row['campaign_name'];
                  		echo "<td>".$row['donated_amount'];
                         echo "<td>".$row['donor_last_date'];
@@ -50,6 +50,7 @@
                 
                  	
                  	}
+                 
 
                  	?>
                 

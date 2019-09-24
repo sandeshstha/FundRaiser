@@ -1,0 +1,85 @@
+@font-face 
+{
+    font-family: HelveticaNeueMedium ;
+    src : url(../fonts/HelveticaNeueMedium.otf);
+}
+
+@font-face 
+{
+    font-family: HelveticaNeueThin ;
+    src : url(../fonts/HelveticaNeueThin.otf);
+}
+
+@font-face 
+{
+    font-family: HelveticaNeueRegular ;
+    src : url(../fonts/HelveticaNeueRegular.ttf);
+}
+
+
+/* body part */
+
+.main-container {
+    text-align: center; 
+    font-family: HelveticaNeueMedium;
+    font-size: 19px;
+    color: #707070;
+    width: 100%;
+    position: absolute;
+}
+
+.about{
+    text-align: center; 
+    align-content: center;
+    width: 40%;
+    margin-left: 30%;
+    height: 300px;
+    /* border: 1px solid red; */
+}
+
+.about table {
+    text-align: center;
+    align-content: center;
+    width: 70%;
+    margin-left: 73px;
+    border-collapse: collapse;
+    /* border: 1px solid red; */
+
+}
+
+.about td,tr {
+    padding: 5px;
+}
+
+.about td {
+    border-top: 1px solid black;
+}
+
+.about td:nth-child(1) {
+    text-align: right;   
+}
+
+.about td:nth-child(3) {
+    font-family: HelveticaNeueThin;
+    text-align: left;   
+}
+
+.about button {
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-color: #591484;
+    color: white;
+    font-family: HelveticaNeueThin;
+    font-size:18px;
+}
+
+.about button:hover {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+
