@@ -1,3 +1,10 @@
+<?php
+	if(!isset($_POST['review'])) {
+		header("Location: manageDonors.php");
+		exit();
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
