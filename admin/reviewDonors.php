@@ -21,8 +21,6 @@
 	  <?php
 	  if (isset($_POST['review'])) {
 	  	$id =$_POST['id'];
-	  	$row=$id;
-
 	  }
 	  ?>
 	  <?php
@@ -49,7 +47,7 @@
                 <input type="text" min="1" name="donatedAmount" value="<?php echo $row['donate_amount'];?>"><br><br>
                 <label class="label">Campaign Name:<br></label>
                 <input type="text" name="campaignName" value="<?php 
-               $c_id = $row['campaign_id'];
+               				$c_id = $row['campaign_id'];
                             $sql1 = "SELECT campaign_name,campaign_id FROM campaigns
                             WHERE campaign_id = '$c_id';";
                             $result1 = mysqli_query($conn, $sql1);
