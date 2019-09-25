@@ -75,7 +75,6 @@
         <h1><?php echo $campaignName;?></h1><br><br>
 
         <div class="c-image">
-            <?php echo $campaignImage;?>
             <img src="<?php echo $campaignImage; ?>" alt="" width="800"><br>
 
             <div class="image-caption">
