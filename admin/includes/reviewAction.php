@@ -20,7 +20,7 @@ if (isset($_POST['accept'])) {
 	  	$result1=mysqli_query($conn,$sql);
 	  	if($result1)
 	  	{
-	  		header("Location: ../successMessage1.php?message=accept");
+	  		header("Location: ../successMessage.php?message=accept");
 	  		
 	  	}
 
@@ -37,7 +37,7 @@ if (isset($_POST['accept'])) {
 	  	$sql="DELETE FROM `campaigns` WHERE campaign_id=$id ";
 	  	$result1=mysqli_query($conn,$sql);
 	  	
-	  	header("Location: ../successMessage1.php?message1=delete");
+	  	header("Location: ../successMessage.php?message1=delete");
 
 	  }
 

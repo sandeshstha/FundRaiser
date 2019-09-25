@@ -18,6 +18,12 @@
 
 
 	?>
+    <?php
+                    $conn = mysqli_connect("localhost","root","","FundRaiser");
+                ?>
+                <?php
+                 $sql = "SELECT * FROM adminlogin;";
+                 $result = mysqli_query($conn , $sql);?>
 
     <!-- navigation section -->
     
@@ -26,9 +32,9 @@
                 <h1>Manage Account</h1>
                 <table>
                     <tr>
-                        <td>Full Name</td>
+                        <td>UserName</td>
                         <td>:</td>
-                        <td><?php echo $data['organizer_fullname'];?></td>
+                        <td><?php echo $data['admin_username'];?></td>
                     </tr>
                     <tr>
                         <td>Username</td>
