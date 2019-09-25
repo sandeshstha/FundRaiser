@@ -2,8 +2,8 @@
 
 $campaigncreator ="Admin";
 
-if(!isset($_POST['submit'])) { //if one try to access createcampaign.inc.php without access
-    header("Location: ../createCampaign.php");
+if(!isset($_POST['submit'])) { //if one try to access this file direct
+    header("Location: ../addEventByAdmin.php");
     exit();
 } else {
 
@@ -19,7 +19,7 @@ if(!isset($_POST['submit'])) { //if one try to access createcampaign.inc.php wit
 
     // error handling
     if(!preg_match("/^[a-zA-Z'. -]+$/", $campaignName)) {    
-        header("Location: ../createCampaign.php?campaign=invalidname");
+        header("Location: ../addEventByAdmin.php?campaign=invalidname");
         exit();
     } else {
         // check if there is already a campaign with same inputted campaignName by the organizer
@@ -27,7 +27,7 @@ if(!isset($_POST['submit'])) { //if one try to access createcampaign.inc.php wit
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
         if($resultCheck > 0) {
-            header("Location: ../createCampaign.php?campaign=camapignNameTaken");
+            header("Location: ../addEventByAdmin.php?campaign=camapignNameTaken");
             exit();
         } else {
 
@@ -36,7 +36,7 @@ if(!isset($_POST['submit'])) { //if one try to access createcampaign.inc.php wit
             $filename = $_FILES['campaignPhoto']['name'];
             $tempname = $_FILES['campaignPhoto']['tmp_name'];
             $filename = md5($filename.time());
-            $campaignImagePath = "../assets/images/campaignImages/".$filename;
+            $campaignImagePath = "assets/images/campaignImages/".$filename;
             
             move_uploaded_file($tempname,$campaignImagePath);
 
