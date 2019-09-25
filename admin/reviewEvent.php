@@ -51,8 +51,8 @@
                 <input type="tel" name="campaignPhone"  pattern="[0-9]{10}" value="<?php echo $row['campaignPhone'];?>" ><br><br>
                 <input type="hidden" name="id" value="<?php echo $row['campaign_id'];?>">
                 <!-- to-do upload file -upload image only-->
-                <label class="label">Campaign Photo:<br></label>
-                <input type="text" name="campaignPhoto" value="<?php echo $row['campaignImage'];?>"><br><br>
+                <!-- <label class="label">Campaign Photo:<br></label> -->
+                <!-- <input type="text" name="campaignPhoto" value="<?php echo $row['campaignImage'];?>"><br><br> -->
                 <center><input type="submit" name="accept" value="Accept">
                         <input type="submit" name="delete" value="Delete">
                 </center>        

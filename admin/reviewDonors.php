@@ -63,18 +63,22 @@
                 <input type="hidden" name="id" value="<?php echo $row['donor_id'];?>">
 
                 <!-- to-do upload file -upload image only-->
-                <label class="label">Upload Proof<br></label>
-                <input type="text" name="campaignPhoto" value="<?php echo $row['proof_image'];?>"><br><br>
+                <!-- <label class="label">Upload Proof<br></label>
+                <input type="text" name="campaignPhoto" value="<?php echo $row['proof_image'];?>"><br><br> -->
+                
                 <center>
                 	<input type="submit" name="accept" value="Accept">
                     <input type="submit" name="delete" value="Delete">
                 </center>    
 		</form>
+
+		
 		<?php
 	   }
 	?>
 		<!-- $sql="UPDATE `campaigns` SET `campaign_name`=,`campaign_type`=[value-3],`campaign_days`=[value-4],`campaign_amount`=[value-5],`campaign_description`=[value-6],`camapignPhone`=[value-7],`campaign_reg_date`=[value-8] WHERE 1" -->
 	</div>
+	<div class="imgclass"><img src="<?php echo $row['proof_image'];?>" style="width: 300px; height: 300px;"></div>>
 
 </body>
 </html>
